@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Adithyan 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff6f61, #6a5acd, #20b2aa, #ffb347);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      text-shadow: 0 0 20px #fff, 0 0 40px #ff0080;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;          /* fill column width */
+      height: auto;         /* keep original aspect ratio */
+      object-fit: contain;  /* show full image, no cropping */
+      max-height: 400px;    /* optional, prevent extremely tall images */
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      animation: explode 1.5s ease-out forwards;
+    }
+    @keyframes explode {
+      from {transform: scale(1);}
+      to {transform: scale(50); opacity: 0;}
+    }
+    footer {
+      margin: 40px 0;
+      font-size: 1em;
+      opacity: 0.9;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #ff9800;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e65100;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy  Birthday Adithyan S 🎂</h1>
+  <h2>Wishing you joy, success, and endless adventures 🎊</h2>
+  
+  <button class="btn" onclick="playMusic()">Happy birthday</button>
+
+  <div class="gallery">
+    <a href="https://ibb.co/tMCgV4yj"><img src="https://i.ibb.co/Fb72RKGZ/IMG-20250817-WA0001.jpg" alt="IMG-20250817-WA0001" border="0"></a>
+    <a href="https://ibb.co/Y7fH1Ch8"><img src="https://i.ibb.co/99yQ1DW2/IMG-20250817-WA0002.jpg" alt="IMG-20250817-WA0002" border="0"></a>
+    <a href="https://ibb.co/ynm6nZJF"><img src="https://i.ibb.co/DDP9Dvnf/IMG-20250817-WA0000.jpg" alt="IMG-20250817-WA0000" border="0"></a>
+  </div>
+  <h6>This website is officially made by pranavwebman</h6>
+
+  <footer>Made with ❤️ for my best friend Adithyan</footer>
+
+  <audio id="music" src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"></audio>
+
+  <script>
+    function playMusic() {
+      document.getElementById("music").play();
+      alert("🎂 Surprise! Wishing you many many happy returns of the day  🎉🎉");
+    }
+
+    // Fireworks effect
+    function createFirework(x, y) {
+      for (let i = 0; i < 20; i++) {
+        let firework = document.createElement("div");
+        firework.className = "firework";
+        firework.style.left = x + "px";
+        firework.style.top = y + "px";
+        firework.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        document.body.appendChild(firework);
+        setTimeout(() => firework.remove(), 1500);
+      }
+    }
+    document.body.addEventListener("click", (e) => {
+      createFirework(e.clientX, e.clientY);
+    });
+  </script>
+</body>
+</html>
